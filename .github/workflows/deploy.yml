@@ -31,6 +31,8 @@ jobs:
           cache: "npm"
 
       - name: Install and build
+        env:
+          PATH_PREFIX: /${{ github.event.repository.name }}/
         run: |
           npm ci
           npm run build:deploy

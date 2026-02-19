@@ -4,12 +4,12 @@
   "description": "Research notes web app with floating topic bubbles and note networks",
   "scripts": {
     "build": "eleventy",
-    "build:deploy": "PATH_PREFIX=/vibenotes/ eleventy",
+    "build:deploy": "eleventy",
     "serve": "eleventy --serve",
     "dev": "eleventy --serve",
     "preview": "eleventy && npx serve _site -l 8080"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^3.0.0"
   }
 }

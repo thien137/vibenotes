@@ -7,7 +7,7 @@ image: images/rl-q.svg
 
 # Q-Learning
 
-Q-Learning is a **model-free**, **off-policy** value-based RL algorithm. It learns the optimal action-value function $Q^*(s,a)$ directly. It was introduced by Chris Watkins in 1989 and remains one of the most influential algorithms in reinforcement learning.
+Q-Learning is a **model-free**, **off-policy** value-based RL algorithm. It learns the optimal action-value function $Q^{\ast}(s,a)$ directly. It was introduced by Chris Watkins in 1989 and remains one of the most influential algorithms in reinforcement learning.
 
 ## Q-Value
 
@@ -25,11 +25,11 @@ where $G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \cdots$ is the return
 
 ### Intuition
 
-Think of the Q-value as a lookup table: for each state-action pair, we store the expected total reward. The optimal policy is then to pick the action with the highest Q-value in each state: $\pi^*(s) = \arg\max_a Q(s,a)$.
+Think of the Q-value as a lookup table: for each state-action pair, we store the expected total reward. The optimal policy is then to pick the action with the highest Q-value in each state: $\pi^{\ast}(s) = \arg\max_a Q(s,a)$.
 
 ### Key Properties
 
-- Q-values satisfy the **Bellman optimality equation**: $Q^*(s,a) = \mathbb{E}[R + \gamma \max_{a'} Q^*(S', a')]$
+- Q-values satisfy the **Bellman optimality equation**: $Q^{\ast}(s,a) = \mathbb{E}[R + \gamma \max_{a'} Q^{\ast}(S', a')]$
 - They can be learned from experience without knowing the environment dynamics
 - The optimal Q-function is unique for finite MDPs
 
@@ -54,7 +54,7 @@ The term in brackets is the **TD error**: the difference between the target $R_{
 
 ### Convergence
 
-Under standard conditions (all state-action pairs visited infinitely often, learning rate satisfies Robbins-Monro), Q-learning converges to $Q^*$ with probability 1.
+Under standard conditions (all state-action pairs visited infinitely often, learning rate satisfies Robbins-Monro), Q-learning converges to $Q^{\ast}$ with probability 1.
 
 ## Properties
 

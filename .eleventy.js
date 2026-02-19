@@ -1,4 +1,7 @@
-module.exports = function (eleventyConfig) {
+module.exports = async function (eleventyConfig) {
+  const { HtmlBasePlugin } = await import("@11ty/eleventy");
+  eleventyConfig.addPlugin(HtmlBasePlugin);
+
   eleventyConfig.addPassthroughCopy({ "public": "/" });
 
   const pathPrefix = process.env.PATH_PREFIX || "";

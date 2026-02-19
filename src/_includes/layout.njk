@@ -6,10 +6,10 @@
 <body>
   {% include "sidebar.njk" %}
   <button type="button" id="sidebar-show-btn" class="sidebar-show-btn" aria-label="Show sidebar" title="Show sidebar" style="display: none;">▶</button>
-  <script src="{{ '/js/settings.js' | url }}" defer></script>
-  <script src="{{ '/js/sidebar.js' | url }}" defer></script>
-  <script src="{{ '/js/mouse-glow.js' | url }}" defer></script>
-  <script src="{{ '/js/fireflies.js' | url }}" defer></script>
+  <script src="/js/settings.js" defer></script>
+  <script src="/js/sidebar.js" defer></script>
+  <script src="/js/mouse-glow.js" defer></script>
+  <script src="/js/fireflies.js" defer></script>
   <main class="main-content">
     {{ content | safe }}
   </main>

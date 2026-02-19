@@ -7,7 +7,7 @@ scripts: ["/js/katex-render.js", "/js/note-reader.js", "https://cdn.jsdelivr.net
 
 <article class="note-content">
   <header class="note-header">
-    <a href="{{ '/topic/' + topic + '/' | url }}" class="note-back">← Back to {{ topic | topicTitle }}</a>
+    <a href="/topic/{{ topic }}/" class="note-back">← Back to {{ topic | topicTitle }}</a>
     <h1 class="note-title">{{ title }}</h1>
   </header>
 
@@ -27,12 +27,12 @@ scripts: ["/js/katex-render.js", "/js/note-reader.js", "https://cdn.jsdelivr.net
   <nav class="related-notes" aria-label="Related notes">
     <div class="related-notes-inner">
       {% if related.prev %}
-      <a href="{{ '/notes/' + related.prev.id + '/' | url }}" class="related-link related-prev">← {{ related.prev.title }}</a>
+      <a href="/notes/{{ related.prev.id }}/" class="related-link related-prev">← {{ related.prev.title }}</a>
       {% else %}
       <span class="related-placeholder"></span>
       {% endif %}
       {% if related.next %}
-      <a href="{{ '/notes/' + related.next.id + '/' | url }}" class="related-link related-next">{{ related.next.title }} →</a>
+      <a href="/notes/{{ related.next.id }}/" class="related-link related-next">{{ related.next.title }} →</a>
       {% else %}
       <span class="related-placeholder"></span>
       {% endif %}

@@ -11,14 +11,14 @@ scripts: ["/js/home-bubbles.js"]
 
   <div class="bubbles-container">
     {% for topic in topics.topics %}
-    <a href="{{ '/topic/' + topic.id + '/' | url }}" class="topic-bubble bubble" 
+    <a href="/topic/{{ topic.id }}/" class="topic-bubble bubble" 
        style="--bubble-color: var(--{{ bubbleVars[loop.index0 % 5] }}); --float-delay: {{ loop.index0 * 2 }}s;"
        data-summary="{{ topic.summary }}"
-       data-image="{{ ('/' + topic.image) | url }}">
+       data-image="/{{ topic.image }}">
       <span class="bubble-inner">
         <span class="bubble-label">{{ topic.title }}</span>
         <div class="bubble-expand">
-          <img src="{{ ('/' + topic.image) | url }}" alt="{{ topic.title }}" class="bubble-img" />
+          <img src="/{{ topic.image }}" alt="{{ topic.title }}" class="bubble-img" />
           <p class="bubble-summary">{{ topic.summary }}</p>
         </div>
       </span>

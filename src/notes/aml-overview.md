@@ -19,7 +19,7 @@ Classical machine learning focuses on algorithms that learn patterns from data w
 Total error decomposes as:
 
 $$
-\text{Error} = \text{Bias}^2 + \text{Variance} + \text{Irreducible Error}
+\text{Error} = \text{Bias}^{2} + \text{Variance} + \text{Irreducible Error}
 $$
 
 - **High bias**: Underfitting—model too simple

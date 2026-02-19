@@ -14,10 +14,10 @@ RNNs process **sequences** by maintaining a hidden state that carries informatio
 At each step $t$:
 
 $$
-h_t = \sigma(W_{hh} h_{t-1} + W_{xh} x_t + b)
+h_{t} = \sigma(W_{hh} h_{t-1} + W_{xh} x_{t} + b)
 $$
 
-The hidden state $h_t$ encodes the history of the sequence.
+The hidden state $h_{t}$ encodes the history of the sequence.
 
 ## Vanishing Gradient
 

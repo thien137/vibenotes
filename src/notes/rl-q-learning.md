@@ -25,7 +25,7 @@ where $G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \cdots$ is the return
 
 ### Intuition
 
-Think of the Q-value as a lookup table: for each state-action pair, we store the expected total reward. The optimal policy is then to pick the action with the highest Q-value in each state: $\pi^{\ast}(s) = \arg\max_a Q(s,a)$.
+Think of the Q-value as a lookup table: for each state-action pair, we store the expected total reward. The optimal policy is then to pick the action with the highest Q-value in each state: $\pi^{\ast}(s) = \arg\max_{a} Q(s,a)$.
 
 ### Key Properties
 
@@ -38,7 +38,7 @@ Think of the Q-value as a lookup table: for each state-action pair, we store the
 The Q-learning update is:
 
 $$
-Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma \max_a Q(S_{t+1}, a) - Q(S_t, A_t) \right]
+Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma \max_{a} Q(S_{t+1}, a) - Q(S_t, A_t) \right]
 $$
 
 where $\alpha$ is the learning rate and $\gamma$ is the discount factor. Pseudocode:
@@ -50,7 +50,7 @@ def q_learning_update(Q, s, a, r, s_next, alpha, gamma):
 
 ### Interpretation
 
-The term in brackets is the **TD error**: the difference between the target $R_{t+1} + \gamma \max_a Q(S_{t+1}, a)$ and the current estimate $Q(S_t, A_t)$. We move our estimate a step ($\alpha$) toward the target.
+The term in brackets is the **TD error**: the difference between the target $R_{t+1} + \gamma \max_{a} Q(S_{t+1}, a)$ and the current estimate $Q(S_t, A_t)$. We move our estimate a step ($\alpha$) toward the target.
 
 ### Convergence
 
@@ -96,7 +96,7 @@ Standard Q-learning overestimates action values due to the max operator. Double 
 
 ### Expected SARSA
 
-Instead of $\max_a Q(S', a)$, uses $\mathbb{E}_{\pi}[Q(S', A')]$, which can reduce variance at the cost of being on-policy if $\pi$ is the behavior policy.
+Instead of $\max_{a} Q(S', a)$, uses $\mathbb{E}_{\pi}[Q(S', A')]$, which can reduce variance at the cost of being on-policy if $\pi$ is the behavior policy.
 
 ## Practical Tips
 

@@ -13,8 +13,8 @@ Decision trees partition the feature space with axis-aligned splits. Each intern
 
 Choose splits that maximize **information gain** (or minimize impurity). Common criteria:
 
-- **Gini impurity**: $1 - \sum_k p_k^2$
-- **Entropy**: $-\sum_k p_k \log p_k$
+- **Gini impurity**: $1 - \sum_{k} p_{k}^2$
+- **Entropy**: $-\sum_{k} p_{k} \log p_{k}$
 
 ## Pruning
 

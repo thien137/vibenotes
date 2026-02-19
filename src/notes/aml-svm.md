@@ -14,17 +14,17 @@ SVMs find the **maximum margin** hyperplane that separates classes. Support vect
 For linearly separable data, the optimization is:
 
 $$
-\min_{w,b} \frac{1}{2}\|w\|^2 \quad \text{s.t.} \quad y_i(w \cdot x_i + b) \geq 1
+\min_{w,b} \frac{1}{2}\|w\|^{2} \quad \text{s.t.} \quad y_{i}(w \cdot x_{i} + b) \geq 1
 $$
 
 The decision function is $f(x) = \text{sign}(w \cdot x + b)$.
 
 ## Soft Margin
 
-For non-separable data, introduce slack variables $\xi_i$:
+For non-separable data, introduce slack variables $\xi_{i}$:
 
 $$
-\min_{w,b,\xi} \frac{1}{2}\|w\|^2 + C \sum_i \xi_i
+\min_{w,b,\xi} \frac{1}{2}\|w\|^{2} + C \sum_{i} \xi_{i}
 $$
 
 $C$ controls the tradeoff between margin size and classification errors.

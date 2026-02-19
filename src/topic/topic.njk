@@ -1,0 +1,30 @@
+---
+pagination:
+  data: topics.topics
+  size: 1
+  alias: topic
+permalink: "/topic/{{ topic.id }}/index.html"
+layout: layout.njk
+scripts: ["https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js", "/js/topic-graph.js"]
+---
+
+<div class="topic-page" data-topic-id="{{ topic.id }}">
+  <div class="topic-header">
+    <a href="{{ '/' | url }}" class="back-link">← Home</a>
+    <h1 class="topic-title">{{ topic.title }}</h1>
+    <button type="button" id="organize-btn" class="organize-btn" aria-label="Organize graph hierarchically" title="Organize graph hierarchically">
+      Organize
+    </button>
+  </div>
+
+  <div id="graph-container" class="graph-container"></div>
+</div>
+
+<script>
+  window.__TOPIC_DATA__ = {
+    notes: {{ topic.notes | dump | safe }},
+    edges: {{ topic.edges | dump | safe }},
+    rootNoteId: {{ topic.rootNoteId | dump | safe }},
+    pathPrefix: {{ pathPrefix | dump | safe }}
+  };
+</script>

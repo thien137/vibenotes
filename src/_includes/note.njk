@@ -1,0 +1,42 @@
+---
+layout: layout.njk
+scripts: ["/js/katex-render.js", "/js/note-reader.js", "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js", "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js", "/js/prism-highlight.js"]
+---
+
+<div id="reading-progress" class="reading-progress" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+<article class="note-content">
+  <header class="note-header">
+    <a href="{{ '/topic/' + topic + '/' | url }}" class="note-back">← Back to {{ topic | topicTitle }}</a>
+    <h1 class="note-title">{{ title }}</h1>
+  </header>
+
+  <nav class="toc-container" id="toc-container" aria-label="On this page">
+    <details class="toc-details" open>
+      <summary class="toc-summary">On this page</summary>
+      <ul class="toc-list" id="toc-list"></ul>
+    </details>
+  </nav>
+
+  <div class="note-body">
+    {{ content | safe }}
+  </div>
+
+  {% set related = topic | relatedNotes(page.fileSlug) %}
+  {% if related.prev or related.next %}
+  <nav class="related-notes" aria-label="Related notes">
+    <div class="related-notes-inner">
+      {% if related.prev %}
+      <a href="{{ '/notes/' + related.prev.id + '/' | url }}" class="related-link related-prev">← {{ related.prev.title }}</a>
+      {% else %}
+      <span class="related-placeholder"></span>
+      {% endif %}
+      {% if related.next %}
+      <a href="{{ '/notes/' + related.next.id + '/' | url }}" class="related-link related-next">{{ related.next.title }} →</a>
+      {% else %}
+      <span class="related-placeholder"></span>
+      {% endif %}
+    </div>
+  </nav>
+  {% endif %}
+</article>

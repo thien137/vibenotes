@@ -1,0 +1,52 @@
+{
+  "topics": [
+    {
+      "id": "reinforcement-learning",
+      "title": "Reinforcement Learning",
+      "summary": "Learning from interaction via rewards. Agents take actions in an environment to maximize cumulative reward over time.",
+      "image": "images/rl-placeholder.svg",
+      "rootNoteId": "rl-overview",
+      "notes": [
+        { "id": "rl-overview", "title": "Overview", "summary": "Introduction to RL: agents, environments, rewards, and policies.", "image": "images/rl-overview.svg" },
+        { "id": "rl-q-learning", "title": "Q-Learning", "summary": "Value-based method for learning optimal policies through Q-value updates.", "image": "images/rl-q.svg" },
+        { "id": "rl-policy-gradient", "title": "Policy Gradient", "summary": "Directly optimizing the policy using gradient ascent on expected return.", "image": "images/rl-policy.svg" }
+      ],
+      "edges": [
+        { "source": "rl-overview", "target": "rl-q-learning" },
+        { "source": "rl-overview", "target": "rl-policy-gradient" }
+      ]
+    },
+    {
+      "id": "algorithmic-ml",
+      "title": "Algorithmic Machine Learning",
+      "summary": "Classical ML algorithms: regression, classification, clustering, and dimensionality reduction.",
+      "image": "images/ml-placeholder.svg",
+      "rootNoteId": "aml-overview",
+      "notes": [
+        { "id": "aml-overview", "title": "Overview", "summary": "Core concepts: supervised vs unsupervised, bias-variance tradeoff.", "image": "images/ml-overview.svg" },
+        { "id": "aml-svm", "title": "Support Vector Machines", "summary": "Maximum margin classifiers and the kernel trick.", "image": "images/ml-svm.svg" },
+        { "id": "aml-trees", "title": "Decision Trees", "summary": "Tree-based models: splitting, pruning, and ensembles.", "image": "images/ml-trees.svg" }
+      ],
+      "edges": [
+        { "source": "aml-overview", "target": "aml-svm" },
+        { "source": "aml-overview", "target": "aml-trees" }
+      ]
+    },
+    {
+      "id": "deep-learning",
+      "title": "Deep Learning",
+      "summary": "Neural networks with many layers. Learning hierarchical representations from data.",
+      "image": "images/dl-placeholder.svg",
+      "rootNoteId": "dl-overview",
+      "notes": [
+        { "id": "dl-overview", "title": "Overview", "summary": "From perceptrons to deep nets. Backpropagation and optimization.", "image": "images/dl-overview.svg" },
+        { "id": "dl-cnn", "title": "Convolutional Networks", "summary": "CNNs for images: convolutions, pooling, and architectures.", "image": "images/dl-cnn.svg" },
+        { "id": "dl-rnn", "title": "Recurrent Networks", "summary": "RNNs and LSTMs for sequential data.", "image": "images/dl-rnn.svg" }
+      ],
+      "edges": [
+        { "source": "dl-overview", "target": "dl-cnn" },
+        { "source": "dl-overview", "target": "dl-rnn" }
+      ]
+    }
+  ]
+}

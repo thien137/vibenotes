@@ -1,6 +1,17 @@
+const MarkdownIt = require("markdown-it");
+const texmath = require("markdown-it-texmath");
+const katex = require("katex");
+
 module.exports = async function (eleventyConfig) {
   const { HtmlBasePlugin } = await import("@11ty/eleventy");
   eleventyConfig.addPlugin(HtmlBasePlugin);
+
+  // Use markdown-it with texmath so math is parsed BEFORE markdown (fixes underscore/italic conflicts)
+  const md = new MarkdownIt({ html: true }).use(texmath, {
+    engine: katex,
+    delimiters: "dollars",
+  });
+  eleventyConfig.setLibrary("md", md);
 
   eleventyConfig.addPassthroughCopy({ "public": "/" });
 

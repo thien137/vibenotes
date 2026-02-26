@@ -9,7 +9,7 @@
       "notes": [
         { "id": "rl-overview", "title": "Overview", "summary": "Introduction to RL: agents, environments, rewards, and policies.", "image": "images/rl-overview.svg" },
         { "id": "rl-q-learning", "title": "Q-Learning", "summary": "Value-based method for learning optimal policies through Q-value updates.", "image": "images/rl-q.svg" },
-        { "id": "rl-policy-gradient", "title": "Policy Gradient", "summary": "Directly optimizing the policy using gradient ascent on expected return.", "image": "images/rl-policy.svg" }
+        { "id": "rl-policy-gradient", "title": "Policy Gradient", "summary": "Policy gradient objective, log-derivative trick, REINFORCE, variance reduction, off-policy gradients, surrogate advantage, KL penalty.", "image": "images/rl-policy.svg" }
       ],
       "edges": [
         { "source": "rl-overview", "target": "rl-q-learning" },

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" width="420" height="200">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2d2a26"/>
+    </marker>
+  </defs>
+  <text x="10" y="18" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#2d2a26">Time t</text>
+  <text x="220" y="18" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#2d2a26">Time t+1</text>
+  <line x1="60" y1="22" x2="200" y2="22" stroke="#ccc" stroke-width="1"/>
+  <line x1="230" y1="22" x2="410" y2="22" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Environment box -->
+  <rect x="20" y="45" width="180" height="70" rx="8" fill="#ffb5a7" fill-opacity="0.3" stroke="#2d2a26" stroke-width="1.5"/>
+  <text x="110" y="65" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">(Environment)</text>
+  <text x="35" y="88" font-family="monospace" font-size="11">w_t</text>
+  <path d="M 65 88 L 155 88" stroke="#2d2a26" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="108" y="82" font-family="monospace" font-size="9">M</text>
+  <text x="170" y="88" font-family="monospace" font-size="11">w_{t+1}</text>
+  <text x="35" y="108" font-family="monospace" font-size="9">r_t = R(w_t, a_t)</text>
+  <text x="160" y="108" font-family="monospace" font-size="8">o_{t+1}=O(w_{t+1},?)</text>
+
+  <!-- Agent box -->
+  <rect x="220" y="45" width="180" height="70" rx="8" fill="#a8e6cf" fill-opacity="0.3" stroke="#2d2a26" stroke-width="1.5"/>
+  <text x="310" y="65" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">(Agent)</text>
+  <text x="235" y="88" font-family="monospace" font-size="11">z_t</text>
+  <path d="M 265 88 L 355 88" stroke="#2d2a26" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="308" y="82" font-family="monospace" font-size="9">P</text>
+  <text x="370" y="88" font-family="monospace" font-size="11">z_{t+1}</text>
+
+  <!-- a_t label -->
+  <text x="200" y="140" font-family="monospace" font-size="10">a_t</text>
+  <path d="M 200 130 L 200 95 L 230 95" stroke="#2d2a26" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="215" y="155" font-family="monospace" font-size="9">?</text>
+
+  <!-- Vertical connections -->
+  <path d="M 110 115 L 110 130 L 200 130" stroke="#6b6560" stroke-width="1"/>
+  <path d="M 310 115 L 310 130 L 200 130" stroke="#6b6560" stroke-width="1"/>
+</svg>
